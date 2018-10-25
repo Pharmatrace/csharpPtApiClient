@@ -12,7 +12,7 @@ Contact: api@pharmatrace.io
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4F380B9-5041-4CC0-9E22-CF1D3F2863C2}</ProjectGuid>
+    <ProjectGuid>{39810AC6-92F5-4AB3-9EA8-3199C0AEBE93}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Org.OpenAPITools</RootNamespace>
