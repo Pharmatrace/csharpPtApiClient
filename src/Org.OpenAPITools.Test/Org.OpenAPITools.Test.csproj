@@ -81,7 +81,7 @@ Contact: api@pharmatrace.io
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\Org.OpenAPITools\Org.OpenAPITools.csproj">
-          <Project>{C44D933C-8722-4EF3-BCD9-43DAAD045610}</Project>
+          <Project>{9D774C0E-59C1-4FA5-9490-437C663E195A}</Project>
           <Name>Org.OpenAPITools</Name>
       </ProjectReference>
   </ItemGroup>
