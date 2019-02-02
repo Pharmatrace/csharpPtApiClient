@@ -28,15 +28,51 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.model
     /// Transport
     /// </summary>
     [DataContract]
-    public partial class Transport : Transaction,  IEquatable<Transport>, IValidatableObject
+    public partial class Transport :  IEquatable<Transport>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Transport" /> class.
         /// </summary>
-        public Transport(long? timestamp = default(long?), string txUid = default(string), string termsId = default(string), string transactionChannel = default(string)) : base(timestamp, txUid, termsId, transactionChannel)
+        /// <param name="timestamp">GMT, Unix Epoch.</param>
+        /// <param name="txUid">unique id hash of the transaction.</param>
+        /// <param name="termsId">id reference to the terms and conditions for this transaction.</param>
+        /// <param name="transactionChannel">hyperledger channel the transaction has been executed in.</param>
+        public Transport(long? timestamp = default(long?), string txUid = default(string), string termsId = default(string), string transactionChannel = default(string))
         {
+            this.Timestamp = timestamp;
+            this.TxUid = txUid;
+            this.TermsId = termsId;
+            this.TransactionChannel = transactionChannel;
         }
         
+        /// <summary>
+        /// GMT, Unix Epoch
+        /// </summary>
+        /// <value>GMT, Unix Epoch</value>
+        [DataMember(Name="timestamp", EmitDefaultValue=false)]
+        public long? Timestamp { get; set; }
+
+        /// <summary>
+        /// unique id hash of the transaction
+        /// </summary>
+        /// <value>unique id hash of the transaction</value>
+        [DataMember(Name="tx_uid", EmitDefaultValue=false)]
+        public string TxUid { get; set; }
+
+        /// <summary>
+        /// id reference to the terms and conditions for this transaction
+        /// </summary>
+        /// <value>id reference to the terms and conditions for this transaction</value>
+        [DataMember(Name="terms_id", EmitDefaultValue=false)]
+        public string TermsId { get; set; }
+
+        /// <summary>
+        /// hyperledger channel the transaction has been executed in
+        /// </summary>
+        /// <value>hyperledger channel the transaction has been executed in</value>
+        [DataMember(Name="transaction_channel", EmitDefaultValue=false)]
+        public string TransactionChannel { get; set; }
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -45,7 +81,10 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.model
         {
             var sb = new StringBuilder();
             sb.Append("class Transport {\n");
-            sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  TxUid: ").Append(TxUid).Append("\n");
+            sb.Append("  TermsId: ").Append(TermsId).Append("\n");
+            sb.Append("  TransactionChannel: ").Append(TransactionChannel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -54,7 +93,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public override string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -79,7 +118,27 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.model
             if (input == null)
                 return false;
 
-            return base.Equals(input);
+            return 
+                (
+                    this.Timestamp == input.Timestamp ||
+                    (this.Timestamp != null &&
+                    this.Timestamp.Equals(input.Timestamp))
+                ) && 
+                (
+                    this.TxUid == input.TxUid ||
+                    (this.TxUid != null &&
+                    this.TxUid.Equals(input.TxUid))
+                ) && 
+                (
+                    this.TermsId == input.TermsId ||
+                    (this.TermsId != null &&
+                    this.TermsId.Equals(input.TermsId))
+                ) && 
+                (
+                    this.TransactionChannel == input.TransactionChannel ||
+                    (this.TransactionChannel != null &&
+                    this.TransactionChannel.Equals(input.TransactionChannel))
+                );
         }
 
         /// <summary>
@@ -90,7 +149,15 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.model
         {
             unchecked // Overflow is fine, just wrap
             {
-                int hashCode = base.GetHashCode();
+                int hashCode = 41;
+                if (this.Timestamp != null)
+                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
+                if (this.TxUid != null)
+                    hashCode = hashCode * 59 + this.TxUid.GetHashCode();
+                if (this.TermsId != null)
+                    hashCode = hashCode * 59 + this.TermsId.GetHashCode();
+                if (this.TransactionChannel != null)
+                    hashCode = hashCode * 59 + this.TransactionChannel.GetHashCode();
                 return hashCode;
             }
         }
@@ -102,7 +169,6 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.model
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            foreach(var x in base.BaseValidate(validationContext)) yield return x;
             yield break;
         }
     }

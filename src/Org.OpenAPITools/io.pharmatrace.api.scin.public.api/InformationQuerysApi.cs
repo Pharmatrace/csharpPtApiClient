@@ -379,7 +379,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<InformationQuery>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (InformationQuery) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InformationQuery)));
         }
 
@@ -454,7 +454,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<InformationQuery>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (InformationQuery) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InformationQuery)));
         }
 
@@ -519,7 +519,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 null);
         }
 
@@ -585,7 +585,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 null);
         }
 
@@ -651,7 +651,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<List<InformationQuery>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (List<InformationQuery>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InformationQuery>)));
         }
 
@@ -718,7 +718,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<List<InformationQuery>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (List<InformationQuery>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<InformationQuery>)));
         }
 
@@ -784,7 +784,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<InformationQuery>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (InformationQuery) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InformationQuery)));
         }
 
@@ -851,7 +851,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<InformationQuery>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (InformationQuery) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(InformationQuery)));
         }
 

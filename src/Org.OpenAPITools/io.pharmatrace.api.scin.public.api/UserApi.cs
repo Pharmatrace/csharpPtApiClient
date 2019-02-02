@@ -231,7 +231,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<Profile>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (Profile) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Profile)));
         }
 
@@ -292,7 +292,7 @@ namespace Org.OpenAPITools.io.pharmatrace.api.scin.public.api
             }
 
             return new ApiResponse<Profile>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (Profile) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Profile)));
         }
 
